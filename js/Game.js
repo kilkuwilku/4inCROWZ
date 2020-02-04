@@ -32,15 +32,15 @@ class Game {
             } else if (e.key === "ArrowRight") {
                 this.activePlayer.activeTokens.moveRight(this.board.columns);
             } else if (e.key === "ArrowDown") {
-                this.activePlayer.activeTokens.dropToken();
+                this.playToken();
             }
         }
     }
 
     playToken() {
         let spaces = this.board.spaces;
-        let activeTokens = this.activePlayer.activePlayer;
-        let targetColumn = spaces[activeTokens.columnLocation];
+        let activeToken = this.activePlayer.activeTokens;
+        let targetColumn = spaces[activeToken.columnLocation];
         let targetSpace = null;
         for (let space of targetColumn) {
             if (space.token === null) {
@@ -49,7 +49,7 @@ class Game {
         }
         if (targetSpace !== null) {
             game.ready = false;
-            activeTokens.dropToken(targetSpace);
+            activeToken.dropToken(targetSpace);
         }
     }
 
