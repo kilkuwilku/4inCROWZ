@@ -47,8 +47,8 @@ body {
 	margin: 0 auto;
 	top: 50px;
     z-index: 100;
-    display: inline;
-}
+    opacity: 1;
+   }
 
 /* BOARD AND PIECES */
 #game-board {
