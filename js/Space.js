@@ -20,6 +20,15 @@ class Space {
         document.getElementById('mask').appendChild(svgSpace);   
     }
 
+    /* Check if space has an associated token to find its owner */
+    get owner() {
+    if (this.token === null) {
+        return null;
+    } else {
+        return this.token.owner;
+        }
+    }
+
     mark(token) {
         this.token = token;
     }
