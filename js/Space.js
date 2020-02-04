@@ -1,5 +1,5 @@
 class Space {
-    constructor(x, y){
+    constructor(x, y) {
         this.x = x;
         this.y = y;
         this.id = `space-${x}-${y}`;
@@ -18,5 +18,9 @@ class Space {
         svgSpace.setAttributeNS(null, 'stroke', 'none');
         
         document.getElementById('mask').appendChild(svgSpace);   
+    }
+
+    mark(token) {
+        this.token = token;
     }
 }
