@@ -18,9 +18,39 @@ class Game {
 
     
     /* Prepare the game */
-    startGame(){
+    startGame() {
         this.board.drawHTMLBoard();
         this.activePlayer.activeTokens.drawHTMLToken();
         this.ready = true;
     }
+
+    /* listening for key events*/
+    handleKeydown(e) {
+        if (this.ready) {
+            if (e.key === "ArrowLeft") {
+                this.activePlayer.activeTokens.moveLeft();
+            } else if (e.key === "ArrowRight") {
+                this.activePlayer.activeTokens.moveRight(this.board.columns);
+            } else if (e.key === "ArrowDown") {
+                this.activePlayer.activeTokens.dropToken();
+            }
+        }
+    }
+
+    playToken() {
+        let spaces = this.board.spaces;
+        let activeTokens = this.activePlayer.activePlayer;
+        let targetColumn = spaces[activeTokens.columnLocation];
+        let targetSpace = null;
+        for (let space of targetColumn) {
+            if (space.token === null) {
+                targetSpace = space;
+            }
+        }
+        if (targetSpace !== null) {
+            game.ready = false;
+            activeTokens.dropToken(targetSpace);
+        }
+    }
+
 }
