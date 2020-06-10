@@ -2,6 +2,8 @@
 
 Javascript game based on tutorial by TeamTreeHouse.com. Some things were changed by [kilkuwilku](https://github.com/kilkuwilku).
 
+[Live Demo](https://kilkuwilku.github.io/4inrows/index.html)
+
 ## How to play
 
 - Use yours arrows on keyboard
