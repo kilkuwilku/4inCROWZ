@@ -23,23 +23,48 @@ body {
     height: 100%;
 }
 
-#begin-game {
+#begin-game,
+#how-to-play {
 	width: 200px;
 	background-color: #B2583C;
 	border-radius: 8px;
     color: #E7D7D2;
 	padding: 25px;
-	position: absolute;
+	position: relative;
 	left: 0;
 	right: 0;
 	margin: 0 auto;
 	top: 430px;
 	z-index: 200;
-	cursor: pointer;
+	cursor: default;
+	border: none;
+    font-family: 'Amaranth', sans-serif;
+    font-size: 25px;
+    transition: linear 0.2s;
+}
+#new-game {
+	display: none;
+	width: 200px;
+	background-color: #E7D7D2;
+	border-radius: 8px;
+    color: #B2583C;
+	padding: 25px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	top: 700px;
+	z-index: 200;
+	cursor: default;
 	border: none;
     font-family: 'Amaranth', sans-serif;
     font-size: 25px;
 }
+
+#begin-game:hover, #how-to-play:hover, #new-game:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
 #logo {
 	position: fixed;
 	left: 0;
@@ -47,7 +72,29 @@ body {
 	margin: 0 auto;
 	top: 50px;
     z-index: 100;
-    opacity: 1;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+   }
+
+#logo-crow {
+    position: fixed;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	top: 10px;
+    z-index: -1000;
+    opacity: 0;
+}
+
+#howtoplay {
+    position: fixed;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	top: 50px;
+    z-index: 100;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    opacity: 0;
+    transition: none;
    }
 
 /* BOARD AND PIECES */
@@ -155,3 +202,21 @@ circle {
 	right: 0;
 }
 
+/*arrow buttons for mobile*/
+    #left, #right, #down {
+            background-color: Transparent;
+            background-repeat:no-repeat;
+            border: none;
+            cursor:pointer;
+            overflow: hidden;
+            outline:none;
+            font-size: 400%;
+            color: #E5D4CE;
+            display: none;
+      }
+
+      @media only screen and (max-width: 767px) {
+        #left, #right, #down {
+          display: inline-block;
+        }
+      }

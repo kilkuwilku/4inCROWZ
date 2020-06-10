@@ -4,19 +4,29 @@
         <title>4inCROWZ</title>
         <link href="https://fonts.googleapis.com/css?family=Amaranth:400,700&display=swap" rel="stylesheet">
         <link rel = "stylesheet" type = "text/css" href = "css/style.css" />
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     </head>
 
     <body>
 		<!-- 
-			Start Game Button
+			Start Game/How To Play Button
 			When a player clicks this button, the game will begin
         -->
         <img src="img/logo.png" id="logo">
+        <img src="img/crow.png" id="logo-crow">
+        <img src="img/howtoplay.png" id="howtoplay">
     	<button id = "begin-game">
     		Start
-    	</button>
-    
-	
+        </button>
+        <button id = "new-game">
+    		Play again
+        </button>
+        <button id = "how-to-play">
+    		How to play?
+        </button>
+
 		<!-- 
 			#game-scene: container for entire play area
 			#play-area: container for the board
@@ -85,18 +95,17 @@
                 <div style = "clear:both"></div>
             </div>
         </div>
-    
-	
-		<!-- 
-			.table: so the board doesn't look like it's floating
-		-->
-        <div class = "table">
+        <div id="table">
+            <button id = "left"><ion-icon name = "arrow-back-circle"></ion-icon></button>
+            <button id = "down"><ion-icon name = "arrow-down-circle"></ion-icon></button>
+            <button id = "right"><ion-icon name = "arrow-forward-circle"></ion-icon></button>
         </div>
+        <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
     </body>
 </html>
 
 
-    
+<script src = "js/transition.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src = "js/Game.js"></script>
